@@ -7,16 +7,14 @@ import static com.fasterxml.jackson.core.JsonToken.START_OBJECT;
 import static com.fasterxml.jackson.core.JsonToken.VALUE_NULL;
 
 import com.fasterxml.jackson.core.JsonToken;
-import com.ksc.offline.model.Audio;
-import com.ksc.offline.model.Param;
-import com.ksc.offline.model.Video;
+import com.ksc.offline.model.Image;
 import com.ksc.transform.JsonUnmarshallerContext;
-import com.ksc.transform.ListUnmarshaller;
 import com.ksc.transform.Unmarshaller;
 
-public class AudioJsonUnmarshaller implements Unmarshaller<Audio, JsonUnmarshallerContext>{
-	public Audio unmarshall(JsonUnmarshallerContext context) throws Exception {
-		Audio audio = new Audio();
+public class ImageJsonUnmarshaller implements Unmarshaller<Image, JsonUnmarshallerContext>{
+	
+	public Image unmarshall(JsonUnmarshallerContext context) throws Exception {
+		Image image= new Image();
 		int originalDepth = context.getCurrentDepth();
 		String currentParentElement = context.getCurrentParentElement();
 		int targetDepth = originalDepth + 1;
@@ -33,22 +31,16 @@ public class AudioJsonUnmarshaller implements Unmarshaller<Audio, JsonUnmarshall
 
 			if (token == FIELD_NAME || token == START_OBJECT) {
 				
-				if (context.testExpression("ar", targetDepth)) {
+				if (context.testExpression("logoUrl", targetDepth)) {
 					context.nextToken();
-					audio.setAr(context.getUnmarshaller(String.class).unmarshall(context));
-				} else if (context.testExpression("ab", targetDepth)) {
+					image.setLogoUrl(context.getUnmarshaller(String.class).unmarshall(context));
+				} else if (context.testExpression("offsetX", targetDepth)) {
 					context.nextToken();
-					audio.setAb(context.getUnmarshaller(String.class).unmarshall(context));
-				} else if (context.testExpression("acodec", targetDepth)) {
+					image.setOffsetX(context.getUnmarshaller(Double.class).unmarshall(context));
+				} else if (context.testExpression("offsetY", targetDepth)) {
 					context.nextToken();
-					audio.setAcodec(context.getUnmarshaller(String.class).unmarshall(context));
-				} else if (context.testExpression("an", targetDepth)) {
-					context.nextToken();
-					audio.setAn(context.getUnmarshaller(Integer.class).unmarshall(context));
-				} else if (context.testExpression("channels", targetDepth)) {
-					context.nextToken();
-					audio.setChannels(context.getUnmarshaller(Integer.class).unmarshall(context));
-				}
+					image.setOffsetY(context.getUnmarshaller(Double.class).unmarshall(context));
+				} 
 			} else if (token == END_ARRAY || token == END_OBJECT) {
 				if (context.getLastParsedParentElement() == null
 						|| context.getLastParsedParentElement().equals(currentParentElement)) {
@@ -58,14 +50,15 @@ public class AudioJsonUnmarshaller implements Unmarshaller<Audio, JsonUnmarshall
 			}
 			token = context.nextToken();
 		}
-		return audio;
+		return image;
 	}
 
-	private static AudioJsonUnmarshaller instance;
+	private static ImageJsonUnmarshaller instance;
 
-	public static AudioJsonUnmarshaller getInstance() {
+	public static ImageJsonUnmarshaller getInstance() {
 		if (instance == null)
-			instance = new AudioJsonUnmarshaller();
+			instance = new ImageJsonUnmarshaller();
 		return instance;
 	}
+
 }

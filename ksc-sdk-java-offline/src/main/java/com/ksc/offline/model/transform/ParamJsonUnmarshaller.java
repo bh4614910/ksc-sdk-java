@@ -9,7 +9,9 @@ import static com.fasterxml.jackson.core.JsonToken.VALUE_NULL;
 import com.fasterxml.jackson.core.JsonToken;
 import com.ksc.offline.model.Audio;
 import com.ksc.offline.model.DetailPreset;
+import com.ksc.offline.model.Image;
 import com.ksc.offline.model.Param;
+import com.ksc.offline.model.Preset;
 import com.ksc.offline.model.Video;
 import com.ksc.transform.JsonUnmarshallerContext;
 import com.ksc.transform.ListUnmarshaller;
@@ -44,7 +46,25 @@ public class ParamJsonUnmarshaller implements Unmarshaller<Param, JsonUnmarshall
 				} else if (context.testExpression("AUDIO", targetDepth)) {
 					context.nextToken();
 					param.setAudio(AudioJsonUnmarshaller.getInstance().unmarshall(context));
-				} 
+				} else if (context.testExpression("IMAGE", targetDepth)){
+					context.nextToken();
+					param.setImage(new ListUnmarshaller<Image>(ImageJsonUnmarshaller.getInstance()).unmarshall(context));
+				} else if (context.testExpression("width", targetDepth)){
+					context.nextToken();
+					param.setWidth(context.getUnmarshaller(Integer.class).unmarshall(context));
+				} else if (context.testExpression("height", targetDepth)){
+					context.nextToken();
+					param.setHeight(context.getUnmarshaller(Integer.class).unmarshall(context));
+				} else if (context.testExpression("interval", targetDepth)){
+					context.nextToken();
+					param.setInterval(context.getUnmarshaller(Integer.class).unmarshall(context));
+				} else if (context.testExpression("hlsTime", targetDepth)){
+					context.nextToken();
+					param.setHlsTime(context.getUnmarshaller(Integer.class).unmarshall(context));
+				} else if (context.testExpression("clearmeta", targetDepth)){
+					context.nextToken();
+					param.setClearmeta(context.getUnmarshaller(Integer.class).unmarshall(context));
+				}
 			} else if (token == END_ARRAY || token == END_OBJECT) {
 				if (context.getLastParsedParentElement() == null
 						|| context.getLastParsedParentElement().equals(currentParentElement)) {

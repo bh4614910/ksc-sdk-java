@@ -10,6 +10,12 @@ public class TaskInfo {
 	private String isTop;
 	private String createTime;
 	private com.ksc.internal.SdkInternalList<SrcInfo> SrcInfoList;
+	
+	private String dstAcl;
+	private String cbUrl;
+	private String cbMethod;
+	private ExtParam extParam;
+	private String errorMsg;
 
 	public String getTaskid() {
 		return taskid;
@@ -92,6 +98,46 @@ public class TaskInfo {
 		for (SrcInfo srcInfo : scrinfos) {
 			SrcInfoList.add(srcInfo);
 		}
+	}
+
+	public String getDstAcl() {
+		return dstAcl;
+	}
+
+	public void setDstAcl(String dstAcl) {
+		this.dstAcl = dstAcl;
+	}
+
+	public String getCbUrl() {
+		return cbUrl;
+	}
+
+	public void setCbUrl(String cbUrl) {
+		this.cbUrl = cbUrl;
+	}
+
+	public String getCbMethod() {
+		return cbMethod;
+	}
+
+	public void setCbMethod(String cbMethod) {
+		this.cbMethod = cbMethod;
+	}
+
+	public ExtParam getExtParam() {
+		return extParam;
+	}
+
+	public void setExtParam(ExtParam extParam) {
+		this.extParam = extParam;
+	}
+
+	public String getErrorMsg() {
+		return errorMsg;
+	}
+
+	public void setErrorMsg(String errorMsg) {
+		this.errorMsg = errorMsg;
 	}
 
 }
