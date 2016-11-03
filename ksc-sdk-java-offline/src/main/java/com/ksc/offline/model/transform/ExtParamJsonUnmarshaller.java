@@ -7,16 +7,13 @@ import static com.fasterxml.jackson.core.JsonToken.START_OBJECT;
 import static com.fasterxml.jackson.core.JsonToken.VALUE_NULL;
 
 import com.fasterxml.jackson.core.JsonToken;
-import com.ksc.offline.model.Audio;
-import com.ksc.offline.model.Param;
-import com.ksc.offline.model.Video;
+import com.ksc.offline.model.ExtParam;
 import com.ksc.transform.JsonUnmarshallerContext;
-import com.ksc.transform.ListUnmarshaller;
 import com.ksc.transform.Unmarshaller;
 
-public class AudioJsonUnmarshaller implements Unmarshaller<Audio, JsonUnmarshallerContext>{
-	public Audio unmarshall(JsonUnmarshallerContext context) throws Exception {
-		Audio audio = new Audio();
+public class ExtParamJsonUnmarshaller implements Unmarshaller<ExtParam, JsonUnmarshallerContext>{
+	public ExtParam unmarshall(JsonUnmarshallerContext context) throws Exception {
+		ExtParam extParam = new ExtParam();
 		int originalDepth = context.getCurrentDepth();
 		String currentParentElement = context.getCurrentParentElement();
 		int targetDepth = originalDepth + 1;
@@ -33,21 +30,18 @@ public class AudioJsonUnmarshaller implements Unmarshaller<Audio, JsonUnmarshall
 
 			if (token == FIELD_NAME || token == START_OBJECT) {
 				
-				if (context.testExpression("ar", targetDepth)) {
+				if (context.testExpression("ss", targetDepth)) {
 					context.nextToken();
-					audio.setAr(context.getUnmarshaller(String.class).unmarshall(context));
-				} else if (context.testExpression("ab", targetDepth)) {
+					extParam.setSs(context.getUnmarshaller(String.class).unmarshall(context));
+				} else if (context.testExpression("duration", targetDepth)) {
 					context.nextToken();
-					audio.setAb(context.getUnmarshaller(String.class).unmarshall(context));
-				} else if (context.testExpression("acodec", targetDepth)) {
+					extParam.setDuration(context.getUnmarshaller(Integer.class).unmarshall(context));
+				} else if (context.testExpression("hls_segment_filename", targetDepth)) {
 					context.nextToken();
-					audio.setAcodec(context.getUnmarshaller(String.class).unmarshall(context));
-				} else if (context.testExpression("an", targetDepth)) {
+					extParam.setHlsSegmentFilename(context.getUnmarshaller(String.class).unmarshall(context));
+				} else if (context.testExpression("pattern", targetDepth)) {
 					context.nextToken();
-					audio.setAn(context.getUnmarshaller(Integer.class).unmarshall(context));
-				} else if (context.testExpression("channels", targetDepth)) {
-					context.nextToken();
-					audio.setChannels(context.getUnmarshaller(Integer.class).unmarshall(context));
+					extParam.setPattern(context.getUnmarshaller(String.class).unmarshall(context));
 				}
 			} else if (token == END_ARRAY || token == END_OBJECT) {
 				if (context.getLastParsedParentElement() == null
@@ -58,14 +52,14 @@ public class AudioJsonUnmarshaller implements Unmarshaller<Audio, JsonUnmarshall
 			}
 			token = context.nextToken();
 		}
-		return audio;
+		return extParam;
 	}
 
-	private static AudioJsonUnmarshaller instance;
+	private static ExtParamJsonUnmarshaller instance;
 
-	public static AudioJsonUnmarshaller getInstance() {
+	public static ExtParamJsonUnmarshaller getInstance() {
 		if (instance == null)
-			instance = new AudioJsonUnmarshaller();
+			instance = new ExtParamJsonUnmarshaller();
 		return instance;
 	}
 }

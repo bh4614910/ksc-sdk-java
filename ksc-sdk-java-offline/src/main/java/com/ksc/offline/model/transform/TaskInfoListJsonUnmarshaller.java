@@ -61,6 +61,21 @@ public class TaskInfoListJsonUnmarshaller implements Unmarshaller<TaskInfo, Json
 				}else if (context.testExpression("srcInfo", targetDepth)) {
 					context.nextToken();
 					taskInfo.setSrcInfoList(new ListUnmarshaller<SrcInfo>(SrcInfoListJsonUnmarshaller.getInstance()).unmarshall(context));
+				}else if (context.testExpression("dstAcl", targetDepth)) {
+					context.nextToken();
+					taskInfo.setDstAcl(context.getUnmarshaller(String.class).unmarshall(context));
+				}else if (context.testExpression("cbUrl", targetDepth)) {
+					context.nextToken();
+					taskInfo.setCbUrl(context.getUnmarshaller(String.class).unmarshall(context));
+				}else if (context.testExpression("cbMethod", targetDepth)) {
+					context.nextToken();
+					taskInfo.setCbMethod(context.getUnmarshaller(String.class).unmarshall(context));
+				}else if (context.testExpression("extParam", targetDepth)) {
+					context.nextToken();
+					taskInfo.setExtParam(ExtParamJsonUnmarshaller.getInstance().unmarshall(context));
+				}else if (context.testExpression("errorMsg", targetDepth)) {
+					context.nextToken();
+					taskInfo.setErrorMsg(context.getUnmarshaller(String.class).unmarshall(context));
 				}
 			} else if (token == END_ARRAY || token == END_OBJECT) {
 				if (context.getLastParsedParentElement() == null

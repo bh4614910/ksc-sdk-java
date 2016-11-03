@@ -1,10 +1,24 @@
 package com.ksc.offline.model;
 
+import java.util.List;
+
 public class Param {
 	private String f;
-	private Video video;
 	
+	//avsample & avsnapshot
+	private int width;
+	private int height;
+	//avsample
+	private int interval;
+	
+	private Video video;
 	private Audio audio;
+	
+	private int hlsTime;
+	private int clearmeta;
+	
+	//avlogo
+	private List<Image> image;
 
 	public String getF() {
 		return f;
@@ -30,6 +44,54 @@ public class Param {
 		this.audio = audio;
 	}
 
+	public int getWidth() {
+		return width;
+	}
+
+	public void setWidth(int width) {
+		this.width = width;
+	}
+
+	public int getHeight() {
+		return height;
+	}
+
+	public void setHeight(int height) {
+		this.height = height;
+	}
+
+	public int getInterval() {
+		return interval;
+	}
+
+	public void setInterval(int interval) {
+		this.interval = interval;
+	}
+
+	public List<Image> getImage() {
+		return image;
+	}
+
+	public void setImage(List<Image> image) {
+		this.image = image;
+	}
+
+	public int getHlsTime() {
+		return hlsTime;
+	}
+
+	public void setHlsTime(int hlsTime) {
+		this.hlsTime = hlsTime;
+	}
+
+	public int getClearmeta() {
+		return clearmeta;
+	}
+
+	public void setClearmeta(int clearmeta) {
+		this.clearmeta = clearmeta;
+	}
+	
 	
 
 	

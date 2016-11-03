@@ -5,6 +5,10 @@ public class Audio {
 	private String ab;
 	private String acodec;
 	private int an;
+	
+	//avm3u8
+	private int channels;
+	
 	public String getAr() {
 		return ar;
 	}
@@ -28,6 +32,12 @@ public class Audio {
 	}
 	public void setAn(int an) {
 		this.an = an;
+	}
+	public int getChannels() {
+		return channels;
+	}
+	public void setChannels(int channels) {
+		this.channels = channels;
 	}
 	
 }

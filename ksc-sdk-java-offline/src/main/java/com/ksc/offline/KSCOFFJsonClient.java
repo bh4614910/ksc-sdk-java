@@ -1,5 +1,8 @@
 package com.ksc.offline;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
 import com.ksc.ClientConfiguration;
 import com.ksc.ClientConfigurationFactory;
 import com.ksc.KscServiceException;
@@ -77,6 +80,10 @@ public class KSCOFFJsonClient extends KscWebServiceClient{
 	
 	private final SdkJsonProtocolFactory protocolFactory = new SdkJsonProtocolFactory(
 			new JsonClientMetadata().withSupportsCbor(false));
+	
+	
+	private static final Log log =
+	        LogFactory.getLog(KSCOFFJsonClient.class);
 
 	/**
 	 * Constructs a new client to invoke service methods on EIP. A credentials
@@ -592,7 +599,12 @@ public class KSCOFFJsonClient extends KscWebServiceClient{
 		
 		HttpResponseHandler<KscServiceException> errorResponseHandler = protocolFactory
                 .createErrorResponseHandler(new JsonErrorResponseMetadata());
-		return client.execute(request, responseHandler, errorResponseHandler, executionContext);
+		try{
+			return client.execute(request, responseHandler, errorResponseHandler, executionContext);
+		}catch(Exception e){
+			log.error(e);
+			return null;
+		}
 	}
 
 	
