@@ -30,6 +30,7 @@ import com.ksc.offline.model.TaskRequest;
 import com.ksc.offline.model.TopTaskByTaskIDRequest;
 import com.ksc.offline.model.UpdatePersetRequest;
 
+
 public class TestOffline {
 	public static void main(String[] args) throws JSONException {
 		AWSCredentials credentials = null;
@@ -56,13 +57,13 @@ public class TestOffline {
 		PresetRequest presetRequest = new PresetRequest();
 		String data = PresetSet("preset");
 		presetRequest.setData(data);
-		System.out.println("创建模板JSON："+data);
+		System.out.println("Create Preset Json:"+data);
 		OfflineErrResult presetResult = ksc.Preset(presetRequest);
 
 		UpdatePersetRequest presetRequest1 = new UpdatePersetRequest();
 		String data1 = PresetSet("liubohua9");
 		presetRequest1.setData(data1);
-		System.out.println("更新模板JSON："+data1);
+		System.out.println("Update Preset JSON "+data1);
 		OfflineErrResult presetResult1 = ksc.UpdatePreset(presetRequest1);
 
 		GetPresetDetailRequest getPresetDetailRequest = new GetPresetDetailRequest();
@@ -72,7 +73,7 @@ public class TestOffline {
 		CreateTaskRequest createTaskRequest = new CreateTaskRequest();
 		String data2 = setTask("preset_avop1", "wangshuai9", "ksyun_a.flv", "ksyun.flv");
 		createTaskRequest.setData(data2);
-		System.out.println("创建任务JSON："+data2);
+		System.out.println("Create Task JSON "+data2);
 		CreateTasklResult createTasklResult = ksc.CreateTask(createTaskRequest);
 
 		TaskRequest tashRequest = new TaskRequest();
