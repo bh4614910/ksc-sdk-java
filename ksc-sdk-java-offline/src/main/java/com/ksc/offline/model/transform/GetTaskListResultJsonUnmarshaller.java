@@ -40,12 +40,14 @@ public class GetTaskListResultJsonUnmarshaller implements Unmarshaller<GetTaskLi
                 if (context.testExpression("taskInfo", targetDepth)) {
                 	context.nextToken();
                 	getTaskListResult
-                            .setTaskInfoList(new ListUnmarshaller<TaskInfo>(TaskInfoListJsonUnmarshaller.getInstance()).unmarshall(context));
+                			.setTaskInfoList(new ListUnmarshaller<TaskInfo>(TaskInfoListJsonUnmarshaller.getInstance()).unmarshall(context));
                 }else if(context.testExpression("errNum", targetDepth)){
                     context.nextToken();
+                    System.out.println("tasklist:"+(context.getUnmarshaller(Integer.class).unmarshall(context)));
                     getTaskListResult.setErrNum((context.getUnmarshaller(Integer.class).unmarshall(context)));
                 }else if(context.testExpression("errMsg", targetDepth)){
                     context.nextToken();
+                    System.out.println("tasklist:"+(context.getUnmarshaller(String.class).unmarshall(context)));
                     getTaskListResult.setErrMsg((context.getUnmarshaller(String.class).unmarshall(context)));
                 }
 

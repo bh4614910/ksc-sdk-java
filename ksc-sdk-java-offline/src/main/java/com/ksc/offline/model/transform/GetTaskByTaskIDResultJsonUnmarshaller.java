@@ -37,8 +37,7 @@ public class GetTaskByTaskIDResultJsonUnmarshaller implements Unmarshaller<GetTa
 
                 if (context.testExpression("taskInfo", targetDepth)) {
                 	context.nextToken();
-                	getTaskByTaskIDResult
-                            .setTaskInfo(TaskInfoListJsonUnmarshaller.getInstance().unmarshall(context));
+                	getTaskByTaskIDResult.setTaskInfo(TaskInfoListJsonUnmarshaller.getInstance().unmarshall(context));
                 }else if(context.testExpression("errNum", targetDepth)){
                     context.nextToken();
                     getTaskByTaskIDResult.setErrNum((context.getUnmarshaller(Integer.class).unmarshall(context)));
