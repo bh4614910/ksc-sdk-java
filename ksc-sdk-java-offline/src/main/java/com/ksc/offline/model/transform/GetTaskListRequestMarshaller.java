@@ -18,11 +18,9 @@ public class GetTaskListRequestMarshaller implements Marshaller<Request<GetTaskL
 		            throw new KscClientException(
 		                    "Invalid argument passed to marshall(...)");
 		        }
-				
-				
+
 				Request<GetTaskListRequest> request = new DefaultRequest<GetTaskListRequest>(
 						getTaskListRequest, "offline");
-				
 				
 		        request.addParameter("Action","GetTaskList");
 		        String version=getTaskListRequest.getVersion();

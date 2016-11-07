@@ -14,7 +14,7 @@ public class TaskInfo {
 	private String dstAcl;
 	private String cbUrl;
 	private String cbMethod;
-	private ExtParam extParam;
+	private String extParam;
 	private String errorMsg;
 
 	public String getTaskid() {
@@ -124,11 +124,11 @@ public class TaskInfo {
 		this.cbMethod = cbMethod;
 	}
 
-	public ExtParam getExtParam() {
+	public String getExtParam() {
 		return extParam;
 	}
 
-	public void setExtParam(ExtParam extParam) {
+	public void setExtParam(String extParam) {
 		this.extParam = extParam;
 	}
 
