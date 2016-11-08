@@ -8,7 +8,7 @@ import com.ksc.offline.model.transform.GetTaskMetaRequestMarshaller;
 
 public class GetTaskMetaRequest  extends KscWebServiceRequest
 implements DryRunSupportedRequest<GetTaskMetaRequest>{
-	private String taskid;
+	private String taskid = "";
 
 	public String getTaskid() {
 		return taskid;
