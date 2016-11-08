@@ -27,7 +27,7 @@ public class GetTaskMetaRequestMarshaller implements Marshaller<Request<GetTaskM
 		        	version="2016-09-19";
 		        }
 		        request.addParameter("Version", version);
-		        if(!getTaskMetaRequest.getTaskid().isEmpty()){
+		        if(!getTaskMetaRequest.getTaskid().equals("")){
 		        	request.addParameter("taskid", StringUtils.fromString(getTaskMetaRequest.getTaskid()));
 		        }
 		        request.setHttpMethod(HttpMethodName.GET);
