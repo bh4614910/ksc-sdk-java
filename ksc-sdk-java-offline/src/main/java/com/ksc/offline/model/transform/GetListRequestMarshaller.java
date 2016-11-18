@@ -27,8 +27,14 @@ Marshaller<Request<GetListRequest>, GetListRequest> {
         }
         request.addParameter("Version", version);
         
+        request.addParameter("presetType", StringUtils.fromString(offlineRequest.getPresettype()));
+        
+        
         if(offlineRequest.getPresettype()!=null){
         	request.addParameter("presetType", StringUtils.fromString(offlineRequest.getPresettype()));
+        }
+        if(offlineRequest.getPreset()!=null){
+        	request.addParameter("presets", StringUtils.fromString(offlineRequest.getPreset()));
         }
         
         request.addParameter("withDetail", StringUtils.fromInteger(offlineRequest.getWithDetail()));
