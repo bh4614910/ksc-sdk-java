@@ -1,9 +1,61 @@
 package com.ksc.offline.model;
 
 public class GetTaskListResult {
+	
+	private String startdate;
+	private String enddate;
+	private int marker;
+	private int count;
+	private int total;
 	private String errMsg;
 	private int errNum;
 	private com.ksc.internal.SdkInternalList<TaskInfo> TaskInfoList;
+	
+	public String getStartdate() {
+		return startdate;
+	}
+
+	public void setStartdate(String startdate) {
+		this.startdate = startdate;
+	}
+
+	public String getEnddate() {
+		return enddate;
+	}
+
+	public void setEnddate(String enddate) {
+		this.enddate = enddate;
+	}
+
+	public int getMarker() {
+		return marker;
+	}
+
+	public void setMarker(int marker) {
+		this.marker = marker;
+	}
+
+	public int getCount() {
+		return count;
+	}
+
+	public void setCount(int count) {
+		this.count = count;
+	}
+
+	public int getTotal() {
+		return total;
+	}
+
+	public void setTotal(int total) {
+		this.total = total;
+	}
+
+	public void setTaskInfoList(com.ksc.internal.SdkInternalList<TaskInfo> taskInfoList) {
+		TaskInfoList = taskInfoList;
+	}
+
+	
 	
 	public String getErrMsg() {
 		return errMsg;

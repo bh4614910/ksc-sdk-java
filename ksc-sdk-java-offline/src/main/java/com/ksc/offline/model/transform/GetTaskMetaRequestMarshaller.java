@@ -30,7 +30,24 @@ public class GetTaskMetaRequestMarshaller implements Marshaller<Request<GetTaskM
 		        if(!getTaskMetaRequest.getTaskid().equals("")){
 		        	request.addParameter("taskid", StringUtils.fromString(getTaskMetaRequest.getTaskid()));
 		        }
+		        
 		        request.setHttpMethod(HttpMethodName.GET);
+		        
+		        if(getTaskMetaRequest.getStartdate()!=-1){
+			        request.addParameter("startdate", StringUtils.fromInteger(getTaskMetaRequest.getStartdate()));
+		        }
+		        if(getTaskMetaRequest.getEnddate()!=-1){
+			        request.addParameter("enddate", StringUtils.fromInteger(getTaskMetaRequest.getEnddate()));
+		        }
+		        if(getTaskMetaRequest.getMarker()!=-1){
+			        request.addParameter("marker", StringUtils.fromInteger(getTaskMetaRequest.getMarker()));
+		        }
+		        if(getTaskMetaRequest.getLimit()!=-1){
+			        request.addParameter("limit", StringUtils.fromInteger(getTaskMetaRequest.getLimit()));
+
+		        }
+		       
+		        
 				return request;
 	}
 	

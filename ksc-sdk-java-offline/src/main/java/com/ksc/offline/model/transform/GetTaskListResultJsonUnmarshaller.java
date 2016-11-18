@@ -43,12 +43,25 @@ public class GetTaskListResultJsonUnmarshaller implements Unmarshaller<GetTaskLi
                 			.setTaskInfoList(new ListUnmarshaller<TaskInfo>(TaskInfoListJsonUnmarshaller.getInstance()).unmarshall(context));
                 }else if(context.testExpression("errNum", targetDepth)){
                     context.nextToken();
-                    System.out.println("tasklist:"+(context.getUnmarshaller(Integer.class).unmarshall(context)));
                     getTaskListResult.setErrNum((context.getUnmarshaller(Integer.class).unmarshall(context)));
                 }else if(context.testExpression("errMsg", targetDepth)){
                     context.nextToken();
-                    System.out.println("tasklist:"+(context.getUnmarshaller(String.class).unmarshall(context)));
                     getTaskListResult.setErrMsg((context.getUnmarshaller(String.class).unmarshall(context)));
+                }else if(context.testExpression("startdate", targetDepth)){
+                    context.nextToken();
+                    getTaskListResult.setStartdate((context.getUnmarshaller(String.class).unmarshall(context)));
+                }else if(context.testExpression("enddate", targetDepth)){
+                    context.nextToken();
+                    getTaskListResult.setEnddate((context.getUnmarshaller(String.class).unmarshall(context)));
+                }else if(context.testExpression("marker", targetDepth)){
+                    context.nextToken();
+                    getTaskListResult.setMarker((context.getUnmarshaller(Integer.class).unmarshall(context)));
+                }else if(context.testExpression("count", targetDepth)){
+                    context.nextToken();
+                    getTaskListResult.setCount((context.getUnmarshaller(Integer.class).unmarshall(context)));
+                }else if(context.testExpression("total", targetDepth)){
+                    context.nextToken();
+                    getTaskListResult.setTotal((context.getUnmarshaller(Integer.class).unmarshall(context)));
                 }
 
             } else if (token == END_ARRAY || token == END_OBJECT) {

@@ -12,7 +12,19 @@ implements DryRunSupportedRequest<GetListRequest>{
 	
 	private String presettype;
 	
+	private String preset;
 	
+
+	public String getPreset() {
+		return preset;
+	}
+
+
+	public void setPreset(String preset) {
+		this.preset = preset;
+	}
+
+
 	public String getPresettype() {
 		return presettype;
 	}

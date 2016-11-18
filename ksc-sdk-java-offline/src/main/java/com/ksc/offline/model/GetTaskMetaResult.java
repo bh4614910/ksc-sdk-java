@@ -6,6 +6,52 @@ public class GetTaskMetaResult {
 	private int errNum;
 	private com.ksc.internal.SdkInternalList<MetaInfo> metaInfoList;
 	
+	private String startdate;
+	private String enddate;
+	private int marker;
+	private int count;
+	private int total;
+	
+	public String getStartdate() {
+		return startdate;
+	}
+
+	public void setStartdate(String startdate) {
+		this.startdate = startdate;
+	}
+
+	public String getEnddate() {
+		return enddate;
+	}
+
+	public void setEnddate(String enddate) {
+		this.enddate = enddate;
+	}
+
+	public int getMarker() {
+		return marker;
+	}
+
+	public void setMarker(int marker) {
+		this.marker = marker;
+	}
+
+	public int getCount() {
+		return count;
+	}
+
+	public void setCount(int count) {
+		this.count = count;
+	}
+
+	public int getTotal() {
+		return total;
+	}
+
+	public void setTotal(int total) {
+		this.total = total;
+	}
+
 	public String getErrMsg() {
 		return errMsg;
 	}
@@ -20,6 +66,9 @@ public class GetTaskMetaResult {
 	public void setErrNum(int errNum) {
 		this.errNum = errNum;
 	}
+	
+	
+	
 	public com.ksc.internal.SdkInternalList<MetaInfo> getMetaInfoList() {
 		return metaInfoList;
 	}

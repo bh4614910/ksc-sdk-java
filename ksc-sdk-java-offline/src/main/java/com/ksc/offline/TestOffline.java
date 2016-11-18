@@ -35,8 +35,8 @@ public class TestOffline {
 	public static void main(String[] args) throws JSONException {
 		AWSCredentials credentials = null;
 		try {
-			credentials = new BasicAWSCredentials("AKLTQwMWetjwS6-Pj6XcvegR1A",
-					"OPPfoQvaIzGZMEWchFQnYumw1169V6ShZns6ryf4rZQL6qmmPqKxSHojo7RDGM+P9g==");
+			credentials = new BasicAWSCredentials("AKLT8QD8WDFRSxmuqccfPXSx5A",
+					"OF9XpifwDTJ4gasNh9QfDPzxyK7AvwYvP3BiSRRg63vOAmqu91YemRg6iFYORtj/ow==");
 		} catch (Exception e) {
 			throw new KscClientException("Cannot load the credentials from the credential profiles file. "
 					+ "Please make sure that your credentials file is at the correct "
@@ -49,7 +49,7 @@ public class TestOffline {
 //		gitlistrequest.setWithDetail(1);
 //		gitlistrequest.setPresettype("avop");
 //		OfflineResult getpresetlistResult = ksc.GetPresetList(gitlistrequest);
-//
+
 //		DeletePresetRequest deletePresetRequest = new DeletePresetRequest();
 //		deletePresetRequest.setPreset("liubohua1");
 //		OfflineErrResult deletePresetResult = ksc.DelPreset(deletePresetRequest);
@@ -79,21 +79,22 @@ public class TestOffline {
 //		TaskRequest tashRequest = new TaskRequest();
 //		tashRequest.setTaskid("359832c8b368ab27c1f4a5b5396e1af120160923");
 //		OfflineErrResult DelTaskByTaskIDResult = ksc.DelTaskByTaskID(tashRequest);
+//
+//		TopTaskByTaskIDRequest topTaskByTaskIDRequest = new TopTaskByTaskIDRequest();
+//		topTaskByTaskIDRequest.setTaskid("39c4926af7e04bd0d0ef9808c74286292016110");
+//		OfflineErrResult TopTaskByTaskIDResult = ksc.TopTaskByTaskID(topTaskByTaskIDRequest);
 
-		TopTaskByTaskIDRequest topTaskByTaskIDRequest = new TopTaskByTaskIDRequest();
-		topTaskByTaskIDRequest.setTaskid("39c4926af7e04bd0d0ef9808c74286292016110");
-		OfflineErrResult TopTaskByTaskIDResult = ksc.TopTaskByTaskID(topTaskByTaskIDRequest);
-
-//		GetTaskListRequest getTaskListRequest = new GetTaskListRequest();
-//		GetTaskListResult getTaskListResult = ksc.GetTaskList(getTaskListRequest);
+		GetTaskListRequest getTaskListRequest = new GetTaskListRequest();
+		getTaskListRequest.setStartdate(20161101);
+		GetTaskListResult getTaskListResult = ksc.GetTaskList(getTaskListRequest);
 
 //		GetTaskByTaskIDRequest getTaskByTaskIDRequest = new GetTaskByTaskIDRequest();
 //		getTaskByTaskIDRequest.setTaskid("359832c8b368ab27c1f4a5b5396e1af120160923");
 //		GetTaskByTaskIDResult getTaskByTaskIDResult = ksc.GetTaskByTaskID(getTaskByTaskIDRequest);
-
-		GetTaskMetaRequest getTaskMetaInfoRequest = new GetTaskMetaRequest();
-		getTaskMetaInfoRequest.setTaskid("c3697fdd9c4c1240c0e5f29b7a63cba820160929");
-		GetTaskMetaResult GetTaskMetaResult = ksc.GetTaskMetaInfo(getTaskMetaInfoRequest);
+		
+//		GetTaskMetaRequest getTaskMetaInfoRequest = new GetTaskMetaRequest();
+//		//getTaskMetaInfoRequest.setTaskid("b444d1e644af2585c07fa62fc509623620161109");
+//		GetTaskMetaResult GetTaskMetaResult = ksc.GetTaskMetaInfo(getTaskMetaInfoRequest);
 		
 		System.out.println("aaaaa");
 
